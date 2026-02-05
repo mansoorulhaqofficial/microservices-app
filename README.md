@@ -50,7 +50,7 @@ microservices-app/
 
 **1. Clone the repo:**
 
-git clone https://github.com/<YOUR-USERNAME>/microservices-app.git
+git clone https://github.com/mansoorulhaqofficial/microservices-app.git
 cd microservices-app
 
 **Optional:** Create a .env file if you plan to use environment variables
