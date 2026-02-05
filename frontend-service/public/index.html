@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postify Creative | Microservices Demo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-microchip"></i> Postify Creative</h1>
+            <p class="subtitle">Microservices Architecture Demo</p>
+        </div>
+        
+        <div class="services-container">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>User Service</h3>
+                <p>Manage user data and profiles through our user microservice API.</p>
+                <a href="http://user.postifycreative.com/users" class="btn" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> View Users API
+                </a>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+                <h3>Product Service</h3>
+                <p>Browse our product catalog through the product microservice API.</p>
+                <a href="http://products.postifycreative.com/products" class="btn btn-secondary" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> View Products API
+                </a>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h3><i class="fas fa-server"></i> System Information</h3>
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>Domain</strong>
+		    <span>
+			  <a href="https://postifycreative.com" target="_blank" rel="noopener noreferrer">
+			    postifycreative.com
+			  </a>
+		    </span>
+                </div>
+                <div class="info-item">
+                    <strong>Architecture</strong>
+                    <span>Microservices</span>
+                </div>
+                <div class="info-item">
+                    <strong>Container Runtime</strong>
+                    <span>Docker Compose</span>
+                </div>
+            </div>
+        </div>
+        
+        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
+            <p style="color: #666; font-size: 0.9rem;">
+                <i class="fas fa-info-circle"></i> This is a demo application showing microservices architecture with Docker.
+                <br>All services are containerized and managed through Docker Compose.
+            </p>
+            <p style="color: #888; font-size: 0.8rem; margin-top: 10px;">
+	    &copy; <span id="currentYear">2024</span><a href="https://postifycreative.com" target="_blank" rel="noopener noreferrer"> Postify Creative.</a> All rights reserved.
+    </p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

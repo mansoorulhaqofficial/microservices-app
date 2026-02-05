@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  # Reverse Proxy
+  nginx-proxy:
+    build: ./nginx-reverse-proxy
+    container_name: nginx-reverse-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./ssl/certs:/etc/letsencrypt    
+    depends_on:
+      - frontend-service
+      - user-service
+      - product-service
+    networks:
+      - microservices-network
+    restart: unless-stopped
+
+  # Frontend Service
+  frontend-service:
+    build: ./frontend-service
+    container_name: frontend-service
+    expose:
+      - "80"
+    networks:
+      - microservices-network
+    restart: unless-stopped
+
+  # User Service
+  user-service:
+    build: ./user-service
+    container_name: user-service
+    expose:
+      - "3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    networks:
+      - microservices-network
+    restart: unless-stopped
+
+  # Product Service
+  product-service:
+    build: ./product-service
+    container_name: product-service
+    expose:
+      - "3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    networks:
+      - microservices-network
+    restart: unless-stopped
+
+# Docker Network
+networks:
+  microservices-network:
+    driver: bridge
+    name: microservices-network
